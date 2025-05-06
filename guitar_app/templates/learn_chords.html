@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h2>Learn Chords</h2>
+  <p>Press the button and play a chord or note on your guitar to have it recognized.</p>
+
+  <div class="d-flex flex-column align-items-start mb-3">
+    <button id="startBtn" class="btn btn-primary mb-2">🎤 Start Listening</button>
+    <button id="stopBtn" class="btn btn-danger">🛑 Stop Listening</button>
+  </div>
+
+  <div id="detectedChord" class="mb-4">
+    <strong>Detected Chord:</strong> <span id="chord-name">--</span>
+  </div>
+
+  <hr/>
+
+  <p><strong>Or select a chord:</strong></p>
+  <div class="form-inline mb-3">
+    <label for="chordSelect" class="mr-2">Choose chord:</label>
+    <select id="chordSelect" class="form-control">
+      <option value="">-- Select a Chord --</option>
+      <option value="A">A major</option>
+      <option value="Am">A minor</option>
+      <option value="B">B major</option>
+      <option value="Bm">B minor</option>
+      <option value="C">C major</option>
+      <option value="Cm">C minor</option>
+      <option value="D">D major</option>
+      <option value="Dm">D minor</option>
+      <option value="E">E major</option>
+      <option value="Em">E minor</option>
+      <option value="F">F major</option>
+      <option value="Fm">F minor</option>
+      <option value="G">G major</option>
+      <option value="Gm">G minor</option>
+    </select>
+  </div>
+  
+  <div id="diagram"></div>
+{% endblock %}
+
+{% block content_scripts %}
+  <script src="{% static 'js/learn.js' %}"></script>
+{% endblock %}

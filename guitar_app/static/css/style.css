@@ -1,0 +1,22 @@
+body {
+    /* Optional: background color, font tweaks */
+  }
+  
+  .chord-table {
+    border: 2px solid #666;
+    border-collapse: collapse;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .chord-table td {
+    border: 1px solid #666;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+  }
+  .chord-table td:nth-child(n) {
+    font-family: monospace;
+  }
+  

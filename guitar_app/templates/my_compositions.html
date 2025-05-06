@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>My Compositions</h2>
+  {% if compositions %}
+    <ul class="list-group">
+      {% for comp in compositions %}
+        <li class="list-group-item">
+          <strong>{{ comp.title }}</strong> – {{ comp.chords }}
+          <small class="text-muted">(saved {{ comp.created_at|date:"Y-m-d H:i" }})</small>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>You have no compositions saved yet. <a href="{% url 'compose_music' %}">Compose now</a>.</p>
+  {% endif %}
+{% endblock %}
