@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'your-secret-key'
 DEBUG = True
-ALLOWED_HOSTS = ['strumwise.me']
+ALLOWED_HOSTS = ['strumwise.me', 'www.strumwise.me', 'strumwise-dv9ze.ondigitalocean.app']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
