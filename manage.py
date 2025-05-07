@@ -5,7 +5,8 @@ import sys
 from pathlib import Path
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
+    # Update the settings module to point to the guitar_app settings
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "guitar_app.settings")
 
     try:
         from django.core.management import execute_from_command_line
@@ -24,9 +25,8 @@ if __name__ == "__main__":
 
         raise
 
-    # This allows easy placement of apps within the interior
-    # base_347_example directory.
+    # Update the sys.path to include the guitar_app directory
     current_path = Path(__file__).parent.resolve()
-    sys.path.append(str(current_path / "base_347_example"))
+    sys.path.append(str(current_path / "guitar_app"))
 
     execute_from_command_line(sys.argv)
