@@ -32,7 +32,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'guitar_tuner' %}">Guitar Tuner</a>
           </li>
-          {% if user.is_authenticated %}
+          {% if request.user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
               <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
@@ -76,9 +76,9 @@
               <a class="btn btn-warning w-100" href="{% url 'compositions' %}">My Compositions</a>
             </li>
             <li class="list-group-item">
-              <a class="btn btn-info w-100" href="{% url 'guitar_tuner' %}">Guitar Tuner</a> <!-- New Button -->
+              <a class="btn btn-info w-100" href="{% url 'guitar_tuner' %}">Guitar Tuner</a>
             </li>
-            {% if user.is_authenticated %}
+            {% if request.user.is_authenticated %}
               <li class="list-group-item">
                 <form action="{% url 'logout' %}" method="post" style="display: inline;">
                   {% csrf_token %}
