@@ -12,6 +12,13 @@ class SignupView(CreateView):
     template_name = 'registration/signup.html'
     success_url = reverse_lazy('home')
 
+    def form_valid(self, form):
+        # Save the user instance
+        user = form.save()
+        # Log the user in
+        login(self.request, user)
+        return redirect(self.success_url)
+
 def learn_chords(request):
     return render(request, 'learn_chords.html')
 
