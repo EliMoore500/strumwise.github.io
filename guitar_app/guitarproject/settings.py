@@ -52,12 +52,8 @@ WSGI_APPLICATION = 'guitarproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB', 'db'),  # Replace 'your_database_name' with the actual database name
-        'USER': os.getenv('POSTGRES_USER', 'db'),               # Replace 'db' with the username you provided
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', ''),  # Replace 'your_password' with the actual password
-        'HOST': os.getenv('POSTGRES_HOST', 'app-da9bd641-d480-42f8-a2a0-efb5a292edf1-do-user-22025306-0.m.db.ondigitalocean.com'),
-        'PORT': os.getenv('POSTGRES_PORT', '25060'),            # Replace '25060' with the port you provided
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
